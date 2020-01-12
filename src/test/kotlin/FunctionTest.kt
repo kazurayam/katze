@@ -2,12 +2,14 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions
 import java.lang.IllegalArgumentException
 
-fun succ(i: Int): Int = i + 1
+fun helloWorld(name: String = "World"): String {
+    return "Hello, ${name}!"
+}
 
-class RationalTest {
-
+class FunctionTest {
+    
     @Test
-    fun `a simple fun`() {
-        Assertions.assertEquals(999, succ(1))
+    fun `helloWorld returns personalized message`() {
+        Assertions.assertEquals("Hello, Molly!", helloWorld("Molly"))
     }
 }
