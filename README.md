@@ -31,3 +31,45 @@ $ git commit -m "initial commit"
  create mode 100644 bocchan.txt
  create mode 100644 helloworld.txt
 ```
+
+# repoディレクトリのtree
+
+```
+:repo [master]$ tree  -a
+.
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── config
+│   ├── index
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       └── heads
+│   │           └── master
+│   ├── objects
+│   │   ├── 3b
+│   │   │   └── 18e512dba79e4c8300dd08aeb37f8e728b8dad
+│   │   ├── a4
+│   │   │   └── 940ec3db4cd24542203a9447c4259c96294c09
+│   │   ├── a9
+│   │   │   └── 7f2489fa15982425e3df14dcf7af9947bec21e
+│   │   ├── bc
+│   │   │   └── 08ed15aff8d7f9cbe3f1ff9079a63a7823e6f9
+│   │   ├── info
+│   │   └── pack
+│   └── refs
+│       ├── heads
+│       │   └── master
+│       └── tags
+├── bocchan.txt
+└── helloworld.txt
+
+14 directories, 13 files
+```
+
+#
+
+## KVSからオブジュエクトを取得 yme cat-file -p
+
+## KVSにオブジェクトを保存 yme hash-object -w
