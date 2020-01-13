@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 compileKotlin {
@@ -28,3 +28,45 @@ compileTestKotlin {
         jvmTarget = "1.8"
     }
 }
+
+ext {
+    repoDirectory = file("./src/test/fixture/repo")
+}
+
+task gitCatFilePRepo {
+    doLast {
+        exec {
+            workingDir repoDirectory
+            commandLine 'git', 'status'
+        }
+    }
+    doLast {
+        exec {
+            println "-------"
+            commandLine "git", "cat-file", "-p", "HEAD"
+        }
+    }
+    doLast {
+        exec {
+            println "-------"
+            commandLine "git", "cat-file", "-p", "a97f2489"
+        }
+    }
+    /*
+    doLast {
+        exec {
+            println "------- bocchan.txt"
+            commandLine "git", "cat-file", "-p", "a4940ec", "|", "head", "|", "nkf", "-w"
+        }
+    }
+    */
+    doLast {
+        exec {
+            println "-------- helloworld.txt"
+            commandLine "git", "cat-file", "-p", "3b18e51"
+        }
+    }
+}
+
+
+
