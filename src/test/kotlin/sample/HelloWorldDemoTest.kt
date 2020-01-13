@@ -1,12 +1,10 @@
+package sample
+
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions
 import java.lang.IllegalArgumentException
 
-fun helloWorld(name: String = "World"): String {
-    return "Hello, ${name}!"
-}
-
-class FunctionTest {
+class HelloWorldDemoTest {
     
     @Test
     fun `helloWorld returns personalized message`() {

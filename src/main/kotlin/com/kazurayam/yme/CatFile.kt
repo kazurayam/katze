@@ -5,8 +5,10 @@ import kotlin.system.exitProcess
 
 class CatFile {
     init {}
-    private fun writeSkippingHeader(outbuf: CharArray, size: Int, n: Int, fout: File): int {}
-    private fun decompress(File fin, File fout): Unit {}
+    private fun writeSkippingHeader(outbuf: CharArray, size: Int, n: Int, fout: File): Int {
+        return 0
+    }
+    private fun decompress(fin: File, fout: File): Unit {}
 
     fun usage() {
         System.err.println("Usage:¥n")
